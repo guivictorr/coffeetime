@@ -17,12 +17,12 @@ export default {
       },
       purple: {
         dark: '#4b2995',
-        base: '#8047f8',
+        DEFAULT: '#8047f8',
         light: '#ebe5f9',
       },
       yellow: {
         dark: '#C47F17',
-        base: '#DBAC2C',
+        DEFAULT: '#DBAC2C',
         light: '#F1E9C9',
       },
     },
