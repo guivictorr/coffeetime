@@ -35,7 +35,7 @@ export default {
       xl: ['3rem', { lineHeight: '130%' }],
     },
     fontFamily: {
-      sans: ['Roboto', 'Baloo 2', ...defaultTheme.fontFamily.sans],
+      sans: ['Roboto', ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [],
