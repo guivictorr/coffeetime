@@ -1,3 +1,4 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -25,6 +26,16 @@ export default {
         DEFAULT: '#DBAC2C',
         light: '#F1E9C9',
       },
+    },
+    fontSize: {
+      xs: ['0.75rem', { lineHeight: '130%' }],
+      sm: ['0.875rem', { lineHeight: '130%' }],
+      md: ['1rem', { lineHeight: '130%' }],
+      lg: ['1.25rem', { lineHeight: '130%' }],
+      xl: ['3rem', { lineHeight: '130%' }],
+    },
+    fontFamily: {
+      sans: ['Roboto', 'Baloo 2', ...defaultTheme.fontFamily.sans],
     },
   },
   plugins: [],
