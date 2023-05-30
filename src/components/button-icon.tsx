@@ -3,18 +3,18 @@ import { ButtonHTMLAttributes } from 'react';
 
 type ButtonIconProps = {
   icon: Icon;
-  iconClassName?: IconProps['className'];
+  iconProps?: IconProps;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function ButtonIcon({
   icon: Icon,
   className,
-  iconClassName,
+  iconProps,
   ...rest
 }: ButtonIconProps) {
   return (
     <button {...rest} className={`${className} p-2 rounded-md transition`}>
-      <Icon className={iconClassName} />
+      <Icon {...iconProps} />
     </button>
   );
 }

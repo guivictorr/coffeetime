@@ -1,6 +1,7 @@
 import { ShoppingCart } from 'phosphor-react';
 import { Button } from './components/button';
 import { ButtonIcon } from './components/button-icon';
+import { CartButton } from './components/cart-button';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         icon={ShoppingCart}
         className='bg-yellow-light text-yellow-dark hover:bg-yellow-dark hover:text-yellow-light'
       />
+      <CartButton badgeCount={1} />
     </div>
   );
 }
