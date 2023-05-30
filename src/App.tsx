@@ -1,7 +1,8 @@
-import { ShoppingCart } from 'phosphor-react';
+import { CreditCard, ShoppingCart } from 'phosphor-react';
 import { Button } from './components/button';
 import { ButtonIcon } from './components/button-icon';
 import { CartButton } from './components/cart-button';
+import { ButtonSelect } from './components/button-select';
 
 function App() {
   return (
@@ -14,6 +15,14 @@ function App() {
         className='bg-yellow-light text-yellow-dark hover:bg-yellow-dark hover:text-yellow-light'
       />
       <CartButton badgeCount={1} />
+      <ButtonSelect id='iid' name='name'>
+        <CreditCard className='text-purple' />
+        LABEL
+      </ButtonSelect>
+
+      <ButtonSelect id='id' name='name'>
+        LABEL
+      </ButtonSelect>
     </div>
   );
 }
