@@ -3,6 +3,7 @@ import { Button } from './components/button';
 import { ButtonIcon } from './components/button-icon';
 import { CartButton } from './components/cart-button';
 import { ButtonSelect } from './components/button-select';
+import { Input } from './components/input';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <ButtonSelect id='id' name='name'>
         LABEL
       </ButtonSelect>
+      <Input />
     </div>
   );
 }
