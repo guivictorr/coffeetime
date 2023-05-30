@@ -4,6 +4,7 @@ import { ButtonIcon } from './components/button-icon';
 import { CartButton } from './components/cart-button';
 import { ButtonSelect } from './components/button-select';
 import { Input } from './components/input';
+import { Counter } from './components/counter';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         LABEL
       </ButtonSelect>
       <Input />
+      <Counter />
     </div>
   );
 }
