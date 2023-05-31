@@ -32,7 +32,7 @@ export function Counter({ max, min }: CounterProps) {
   }, []);
 
   return (
-    <div className='flex items-center gap-2 bg-base-button rounded-md max-w-max p-2 mt-4 ml-4'>
+    <div className='flex items-center gap-2 bg-base-button rounded-md max-w-max p-2'>
       <button
         onClick={decrement}
         className='grid place-items-center w-4 h-4 text-purple hover:text-purple-dark'

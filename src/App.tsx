@@ -5,6 +5,7 @@ import { CartButton } from './components/cart-button';
 import { ButtonSelect } from './components/button-select';
 import { Input } from './components/input';
 import { Counter } from './components/counter';
+import { CoffeeCard } from './components/coffee-card';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
       </ButtonSelect>
       <Input />
       <Counter />
+
+      <CoffeeCard />
     </div>
   );
 }
