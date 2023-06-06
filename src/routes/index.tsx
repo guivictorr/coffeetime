@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
 const Root = lazy(() => import('../pages/root'));
 
 const router = createBrowserRouter([
