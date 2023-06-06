@@ -14,9 +14,9 @@ export function CartButton({ badgeCount = 0 }: CartButtonProps) {
         </span>
       )}
       <ButtonIcon
-        className='relative bg-yellow-light text-yellow-dark hover:bg-yellow/50 transition'
+        className='relative bg-yellow-light text-yellow-dark hover:bg-yellow/50'
         icon={ShoppingCartSimple}
-        iconProps={{ weight: 'fill' }}
+        iconProps={{ weight: 'fill', size: 24 }}
       />
     </div>
   );

@@ -1,4 +1,5 @@
 import { CartButton } from './cart-button';
+import { Location } from './location';
 
 export function Header() {
   return (
@@ -6,7 +7,7 @@ export function Header() {
       <h1 className='text-lg py-9'>Coffee Time</h1>
 
       <div className='flex items-center gap-3'>
-        <span>location</span>
+        <Location />
         <CartButton />
       </div>
     </header>
