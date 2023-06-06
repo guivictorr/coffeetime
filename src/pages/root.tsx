@@ -3,7 +3,7 @@ import { Header } from '../components/header';
 
 export default function Root() {
   return (
-    <section>
+    <section className='px-40'>
       <Header />
       <div>
         <Outlet />
