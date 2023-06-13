@@ -3,13 +3,12 @@ import { Location } from './location';
 
 export function Header() {
   return (
-    <header className='flex justify-between items-center'>
-      <h1 className='text-lg py-9'>Coffee Time</h1>
-
-      <div className='flex items-center gap-3'>
+    <header className='flex justify-between items-center gap-4'>
+      <h1 className='text-lg py-9 whitespace-nowrap'>Coffee Time</h1>
+      <nav className='flex gap-2 overflow-x-auto'>
         <Location />
         <CartButton />
-      </div>
+      </nav>
     </header>
   );
 }
