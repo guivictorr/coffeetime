@@ -27,7 +27,8 @@ export default function Home() {
   return (
     <main>
       <section className='grid grid-cols-1 lg:grid-cols-[588px_1fr] grid-rows-1 h-[544px] gap-x-12'>
-        <div className='flex flex-col items-center text-center lg:items-start lg:text-start justify-center space-y-16 '>
+        <div className='absolute -top-[230px] right-0 bottom-0 left-0 bg-hero-pattern bg-no-repeat bg-center'></div>
+        <div className='flex flex-col items-center text-center lg:items-start lg:text-start justify-center space-y-16 z-10'>
           <div className='max-w-[588px] space-y-4'>
             <h2 className='text-base-title text-[28px] sm:text-xl'>
               Encontre o café perfeito para qualquer hora do dia
@@ -39,14 +40,17 @@ export default function Home() {
           </div>
           <ul className='grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-y-5 gap-x-10 text-base-text'>
             {heroList.map(item => (
-              <li className='flex items-center justify-center lg:justify-start gap-3'>
+              <li
+                key={item.title}
+                className='flex items-center justify-center lg:justify-start gap-3'
+              >
                 <img className='hidden lg:block' alt='' src={item.icon} />
                 <span>{item.title}</span>
               </li>
             ))}
           </ul>
         </div>
-        <figure className='hidden lg:flex items-center justify-center'>
+        <figure className='hidden lg:flex items-center justify-center z-10'>
           <img src={heroImage} alt='' />
         </figure>
       </section>
