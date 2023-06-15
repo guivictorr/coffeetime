@@ -68,7 +68,7 @@
       "description": "Bebida feita com chocolate dissolvido no leite quente e café",
       "categories": ["Especial", "Com Leite"],
       "priceInCents": 1390,
-      "image": "hot_coffee.png"
+      "image": "hot_chocolate.png"
     },
     {
       "name": "Cubano",

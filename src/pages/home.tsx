@@ -58,10 +58,10 @@ export default function Home() {
       </section>
       <section>
         <h3 className='text-[24px]'>Nossos Cafés</h3>
-        <ul className='grid grid-cols-1 my-12'>
+        <ul className='grid grid-cols-1 my-12 gap-y-14'>
           {coffeeData.data.map(coffee => (
             <li className='mx-auto' key={coffee.name}>
-              <CoffeeCard />
+              <CoffeeCard {...coffee} />
             </li>
           ))}
         </ul>
