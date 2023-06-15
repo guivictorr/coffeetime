@@ -1,8 +1,10 @@
+import coffeeData from '../data/coffees.json';
 import heroImage from '../assets/img/hero.png';
 import coffeeIcon from '../assets/svg/coffee.svg';
 import shoppingIcon from '../assets/svg/shopping.svg';
 import packageIcon from '../assets/svg/package.svg';
 import stopwatchIcon from '../assets/svg/stopwatch.svg';
+import { CoffeeCard } from '../components/coffee-card';
 
 const heroList = [
   {
@@ -53,6 +55,16 @@ export default function Home() {
         <figure className='hidden lg:flex items-center justify-center z-10'>
           <img src={heroImage} alt='' />
         </figure>
+      </section>
+      <section>
+        <h3 className='text-[24px]'>Nossos Cafés</h3>
+        <ul className='grid grid-cols-1 my-12'>
+          {coffeeData.data.map(coffee => (
+            <li className='mx-auto' key={coffee.name}>
+              <CoffeeCard />
+            </li>
+          ))}
+        </ul>
       </section>
     </main>
   );
