@@ -1,4 +1,27 @@
 import heroImage from '../assets/img/hero.png';
+import coffeeIcon from '../assets/svg/coffee.svg';
+import shoppingIcon from '../assets/svg/shopping.svg';
+import packageIcon from '../assets/svg/package.svg';
+import stopwatchIcon from '../assets/svg/stopwatch.svg';
+
+const heroList = [
+  {
+    title: 'Compra simples e segura',
+    icon: shoppingIcon,
+  },
+  {
+    title: 'Embalagem mantém o café intacto',
+    icon: packageIcon,
+  },
+  {
+    title: 'Entrega rápida e rastreada',
+    icon: stopwatchIcon,
+  },
+  {
+    title: 'O café chega fresquinho até você',
+    icon: coffeeIcon,
+  },
+];
 
 export default function Home() {
   return (
@@ -15,10 +38,12 @@ export default function Home() {
             </p>
           </div>
           <ul className='grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-y-5 gap-x-10 text-base-text'>
-            <li>Compra simples e segura</li>
-            <li>Embalagem mantém o café intacto</li>
-            <li>Entrega rápida e rastreada</li>
-            <li>O café chega fresquinho até você</li>
+            {heroList.map(item => (
+              <li className='flex items-center justify-center lg:justify-start gap-3'>
+                <img className='hidden lg:block' alt='' src={item.icon} />
+                <span>{item.title}</span>
+              </li>
+            ))}
           </ul>
         </div>
         <figure className='hidden lg:flex items-center justify-center'>
