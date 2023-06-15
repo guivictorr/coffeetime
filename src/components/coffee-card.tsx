@@ -33,7 +33,7 @@ export function CoffeeCard({
         <div className='flex items-center gap-1'>
           <span className='text-xs self-end'>R$</span>
           <span className='font-baloo font-extrabold text-lg leading-5'>
-            {priceInCents / 100}
+            {(priceInCents / 100).toFixed(2)}
           </span>
         </div>
         <div className='flex gap-2'>
