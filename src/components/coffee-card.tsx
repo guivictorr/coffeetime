@@ -20,12 +20,12 @@ export function CoffeeCard({
   return (
     <div className='pb-5 px-6 text-base-text max-w-[256px] w-full bg-base-card flex flex-col items-center text-center rounded-se-3xl rounded-es-3xl rounded-ss-md rounded-ee-md'>
       <img src={`src/assets/img/${image}`} className='w-28 h-28 -mt-6' />
-      <div className='bg-yellow-light text-yellow-dark uppercase px-2 py-1 rounded-full text-xs mt-3'>
-        {categories.map(category => (
-          <span>{category}</span>
-        ))}
-      </div>
 
+      {categories.map(category => (
+        <div className='bg-yellow-light text-yellow-dark uppercase px-2 py-1 rounded-full text-xs mt-3'>
+          <span>{category}</span>
+        </div>
+      ))}
       <p className='font-baloo font-extrabold mt-4 text-lg'>{name}</p>
       <p className='text-base-label text-sm mt-2 mb-8'>{description}</p>
 
