@@ -23,7 +23,10 @@ export function CoffeeCard({
 
       <ul className='flex flex-col sm:flex-row items-center gap-x-2'>
         {categories.map(category => (
-          <li className='bg-yellow-light text-yellow-dark uppercase px-2 py-1 rounded-full text-xs mt-3'>
+          <li
+            key={category}
+            className='bg-yellow-light text-yellow-dark uppercase px-2 py-1 rounded-full text-xs mt-3'
+          >
             <span>{category}</span>
           </li>
         ))}
