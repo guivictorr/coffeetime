@@ -10,7 +10,7 @@ import { ButtonSelect } from '../components/button-select';
 
 export default function Checkout() {
   return (
-    <main className='grid grid-cols-1'>
+    <main className='grid grid-cols-1 lg:gap-8 lg:grid-cols-[minmax(640px,_1fr)_1fr]'>
       <section>
         <div className='bg-base-card p-4 rounded-ss-md rounded-se-md sm:rounded-md'>
           <header className='flex gap-2'>
@@ -80,7 +80,7 @@ export default function Checkout() {
           </fieldset>
         </div>
       </section>
-      <section className='bg-yellow mt-12'>carrinho</section>
+      <section className='bg-yellow'>carrinho</section>
     </main>
   );
 }
