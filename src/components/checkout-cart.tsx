@@ -24,26 +24,32 @@ export function CheckoutCart() {
   return (
     <article className='p-4 md:p-10 bg-base-card rounded-se-3xl rounded-es-3xl rounded-ss-md rounded-ee-md'>
       <ul>
-        <li className='flex'>
-          <img
-            src='src/assets/img/cream.png'
-            alt=''
-            className='hidden sm:block mr-5'
-          />
-          <div className=''>
-            <p className='mb-2'>Expresso tradicional</p>
-            <div className='flex gap-2'>
-              <Counter onChange={console.log} />
-              <Button variant='secondary'>
-                <Trash className='text-purple' />
-                <span>Remover</span>
-              </Button>
-            </div>
-          </div>
-          <p className='grow text-end font-bold'>R$ 9,90</p>
-        </li>
+        {cart.products.map(product => (
+          <>
+            <li className='flex'>
+              <img
+                src={`src/assets/img/${product.image}`}
+                alt=''
+                className='hidden sm:block mr-5'
+              />
+              <div className=''>
+                <p className='mb-2'>{product.name}</p>
+                <div className='flex gap-2'>
+                  <Counter onChange={console.log} />
+                  <Button variant='secondary'>
+                    <Trash className='text-purple' />
+                    <span>Remover</span>
+                  </Button>
+                </div>
+              </div>
+              <p className='grow text-end font-bold'>
+                {convertFromCentsToReal(product.priceInCents)}
+              </p>
+            </li>
 
-        <hr className='my-6 text-base-button' />
+            <hr className='my-6 text-base-button' />
+          </>
+        ))}
       </ul>
 
       <footer className='flex flex-col'>
