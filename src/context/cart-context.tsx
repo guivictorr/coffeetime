@@ -16,7 +16,6 @@ type CartContextProps = {
   products: ProductsProps[];
   addProduct: (product: ProductsProps) => void;
   removeProduct: (productId: string) => void;
-  decrementProduct: (productId: string) => void;
 };
 
 export const CartContext = createContext<CartContextProps | undefined>(
@@ -58,20 +57,6 @@ export function CartProvider({ children }: PropsWithChildren) {
     setProducts(filteredProducts);
   }
 
-  function decrementProduct(productId: string) {
-    const productIndex = products.findIndex(
-      product => product.id === productId,
-    );
-
-    if (productIndex === -1) {
-      removeProduct(products[productIndex].id);
-      return;
-    }
-
-    products[productIndex].quantity -= 1;
-    setProducts(products);
-  }
-
   return (
     <CartContext.Provider
       value={{
@@ -82,7 +67,6 @@ export function CartProvider({ children }: PropsWithChildren) {
         length,
         addProduct,
         removeProduct,
-        decrementProduct,
       }}
     >
       {children}
