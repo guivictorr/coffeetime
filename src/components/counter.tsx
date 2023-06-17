@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 
 type CounterProps = {
   onChange: (counter: number) => void;
+  initialValue?: number;
   max?: number;
   min?: number;
 };
 
-export function Counter({ max, min, onChange }: CounterProps) {
+export function Counter({ max, min, onChange, initialValue }: CounterProps) {
   const [counter, setCounter] = useState(0);
 
   function increment() {
@@ -29,6 +30,10 @@ export function Counter({ max, min, onChange }: CounterProps) {
   useEffect(() => {
     if (min) {
       setCounter(min);
+    }
+
+    if (initialValue) {
+      setCounter(initialValue);
     }
   }, []);
 
