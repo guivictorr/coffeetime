@@ -28,7 +28,10 @@ export function Location() {
       title='Porto Alegre, RS'
       className='flex items-center gap-2 text-purple-dark bg-purple-light p-2 rounded-md overflow-hidden'
     >
-      <MapPin weight='fill' className='text-purple min-w-[22px] min-h-[22px]' />
+      <MapPin
+        weight='fill'
+        className='hidden sm:block text-purple min-w-[22px] min-h-[22px]'
+      />
       <span className='truncate'>{location ?? 'Carregando...'}</span>
     </button>
   );

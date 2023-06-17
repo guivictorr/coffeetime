@@ -12,7 +12,7 @@ export function CartButton({ badgeCount = 0 }: CartButtonProps) {
   return (
     <div className='relative w-max'>
       {badgeCount > 0 && (
-        <span className='pointer-events-none z-10 absolute -top-1 -right-1 bg-yellow-dark text-white rounded-full px-1 text-xs'>
+        <span className='px-1 h-[16px] grid place-items-center leading-3 pointer-events-none z-10 absolute -top-1 -right-1 bg-yellow-dark text-white rounded-full text-xs'>
           {badgeCount}
         </span>
       )}
