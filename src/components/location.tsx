@@ -22,10 +22,6 @@ export function Location() {
     }
   }, []);
 
-  if (!location) {
-    return;
-  }
-
   return (
     <button
       type='button'
@@ -33,7 +29,7 @@ export function Location() {
       className='flex items-center gap-2 text-purple-dark bg-purple-light p-2 rounded-md overflow-hidden'
     >
       <MapPin weight='fill' className='text-purple min-w-[22px] min-h-[22px]' />
-      <span className='truncate'>{location}</span>
+      <span className='truncate'>{location ?? 'Carregando...'}</span>
     </button>
   );
 }

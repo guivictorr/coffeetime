@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <main>
       <section className='grid grid-cols-1 lg:grid-cols-[588px_1fr] grid-rows-1 h-[544px] gap-x-12'>
-        <div className='absolute -top-[230px] right-0 bottom-0 left-0 bg-hero-pattern bg-no-repeat bg-center'></div>
+        <div className='absolute -top-[230px] right-0 bottom-0 left-0 bg-hero-pattern bg-no-repeat bg-center pointer-events-none'></div>
         <div className='flex flex-col items-center text-center lg:items-start lg:text-start justify-center space-y-16 z-10'>
           <div className='max-w-[588px] space-y-4'>
             <h2 className='text-base-title text-[28px] sm:text-xl'>
