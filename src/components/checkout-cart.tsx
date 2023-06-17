@@ -36,7 +36,10 @@ export function CheckoutCart() {
                 <p className='mb-2'>{product.name}</p>
                 <div className='flex gap-2'>
                   <Counter onChange={console.log} />
-                  <Button variant='secondary'>
+                  <Button
+                    onClick={() => cart.removeProduct(product.id)}
+                    variant='secondary'
+                  >
                     <Trash className='text-purple' />
                     <span>Remover</span>
                   </Button>
