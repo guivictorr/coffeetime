@@ -12,6 +12,7 @@ export default function Checkout() {
   return (
     <main className='grid grid-cols-1 lg:gap-8 lg:grid-cols-[minmax(640px,_1fr)_1fr]'>
       <section>
+        <h2 className='text-md mb-4'>Complete seu pedido</h2>
         <div className='bg-base-card p-4 rounded-ss-md rounded-se-md sm:rounded-md'>
           <header className='flex gap-2'>
             <MapPinLine className='h-5 w-5 text-yellow-dark' />
@@ -46,6 +47,7 @@ export default function Checkout() {
             </div>
           </fieldset>
         </div>
+
         <div className='bg-base-card p-4 rounded-es-md rounded-ee-md sm:rounded-md sm:mt-3'>
           <header className='flex gap-2'>
             <CurrencyDollar className='h-5 w-5 text-purple' />
@@ -80,7 +82,10 @@ export default function Checkout() {
           </fieldset>
         </div>
       </section>
-      <section className='bg-yellow'>carrinho</section>
+      <section>
+        <h3 className='text-md mb-4'>Cafés selecionados</h3>
+        <div className='bg-base-card'>teste</div>
+      </section>
     </main>
   );
 }
