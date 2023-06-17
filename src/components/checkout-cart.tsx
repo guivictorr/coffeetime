@@ -1,8 +1,26 @@
 import { Trash } from 'phosphor-react';
 import { Button } from './button';
 import { Counter } from './counter';
+import { useCart } from '../hooks/useCart';
+
+function convertFromCentsToReal(valueInCents: number) {
+  const valueInReal = valueInCents / 100;
+
+  return new Intl.NumberFormat('pt-br', {
+    currency: 'BRL',
+    style: 'currency',
+  }).format(valueInReal);
+}
 
 export function CheckoutCart() {
+  const cart = useCart();
+
+  const [total, subtotal, shipFee] = [
+    cart.total,
+    cart.subtotal,
+    cart.shipFee,
+  ].map(convertFromCentsToReal);
+
   return (
     <article className='p-4 md:p-10 bg-base-card rounded-se-3xl rounded-es-3xl rounded-ss-md rounded-ee-md'>
       <ul>
@@ -36,9 +54,11 @@ export function CheckoutCart() {
             <span className='text-base-subtitle text-lg font-bold'>Total</span>
           </div>
           <div className='flex flex-col text-end gap-3'>
-            <span className='text-md text-base-text'>R$ 29,70</span>
-            <span className='text-md text-base-text'>R$ 3,50</span>
-            <span className='text-base-subtitle text-lg font-bold'>33,50</span>
+            <span className='text-md text-base-text'>{subtotal}</span>
+            <span className='text-md text-base-text'>{shipFee}</span>
+            <span className='text-base-subtitle text-lg font-bold'>
+              {total}
+            </span>
           </div>
         </div>
 

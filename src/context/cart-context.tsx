@@ -19,7 +19,9 @@ type CartContextProps = {
   decrementProduct: (productId: string) => void;
 };
 
-export const CartContext = createContext<CartContextProps | null>(null);
+export const CartContext = createContext<CartContextProps | undefined>(
+  undefined,
+);
 
 export function CartProvider({ children }: PropsWithChildren) {
   const [products, setProducts] = useState<ProductsProps[]>([]);
