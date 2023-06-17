@@ -2,11 +2,12 @@ import { Minus, Plus } from 'phosphor-react';
 import { useEffect, useState } from 'react';
 
 type CounterProps = {
+  onChange: (counter: number) => void;
   max?: number;
   min?: number;
 };
 
-export function Counter({ max, min }: CounterProps) {
+export function Counter({ max, min, onChange }: CounterProps) {
   const [counter, setCounter] = useState(0);
 
   function increment() {
@@ -30,6 +31,12 @@ export function Counter({ max, min }: CounterProps) {
       setCounter(min);
     }
   }, []);
+
+  useEffect(() => {
+    if (onChange) {
+      onChange(counter);
+    }
+  }, [counter]);
 
   return (
     <div className='flex items-center gap-2 bg-base-button rounded-md max-w-max p-2'>

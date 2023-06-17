@@ -25,6 +25,10 @@ export function CartProvider({ children }: PropsWithChildren) {
   const [products, setProducts] = useState<ProductsProps[]>([]);
 
   const shipFee = 350;
+  const length = products.reduce((acc, product) => {
+    acc += product.quantity;
+    return acc;
+  }, 0);
   const subtotal = products.reduce((acc, product) => {
     acc += product.priceInCents;
     return acc;
@@ -41,7 +45,7 @@ export function CartProvider({ children }: PropsWithChildren) {
       return;
     }
 
-    products[productIndex].quantity += 1;
+    products[productIndex].quantity += newProduct.quantity;
     setProducts(products);
   }
 
@@ -73,7 +77,7 @@ export function CartProvider({ children }: PropsWithChildren) {
         total,
         subtotal,
         shipFee,
-        length: products.length,
+        length,
         addProduct,
         removeProduct,
         decrementProduct,

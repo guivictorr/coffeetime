@@ -1,6 +1,8 @@
 import { ShoppingCart } from 'phosphor-react';
 import { ButtonIcon } from './button-icon';
 import { Counter } from './counter';
+import { useState } from 'react';
+import { useCart } from '../hooks/useCart';
 
 type CoffeeCardProps = {
   name: string;
@@ -17,6 +19,9 @@ export function CoffeeCard({
   image,
   priceInCents,
 }: CoffeeCardProps) {
+  const [counter, setCounter] = useState(0);
+  const cart = useCart();
+
   return (
     <div className='pb-5 px-6 text-base-text max-w-[256px] w-full bg-base-card flex flex-col items-center text-center rounded-se-3xl rounded-es-3xl rounded-ss-md rounded-ee-md'>
       <img src={`src/assets/img/${image}`} className='w-28 h-28 -mt-6' />
@@ -42,11 +47,20 @@ export function CoffeeCard({
           </span>
         </div>
         <div className='flex gap-2'>
-          <Counter />
+          <Counter onChange={setCounter} />
           <ButtonIcon
             icon={ShoppingCart}
             iconProps={{ weight: 'fill' }}
             className='bg-purple-dark text-white w-10 grid place-items-center text-lg'
+            onClick={() => {
+              cart?.addProduct({
+                name,
+                quantity: counter,
+                image,
+                priceInCents,
+                id: name + Date.now(),
+              });
+            }}
           />
         </div>
       </footer>
