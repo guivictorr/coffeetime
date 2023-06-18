@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Root from '../pages/root';
 import Home from '../pages/home';
 import Checkout from '../pages/checkout';
+import Confirmation from '../pages/confirmation';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'confirmation',
-        element: <h1>confirmation</h1>,
+        element: <Confirmation />,
       },
     ],
   },
