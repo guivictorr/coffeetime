@@ -59,12 +59,20 @@ export function CartProvider({ children }: PropsWithChildren) {
   }
 
   function updateProductQuantity(quantity: number, productId: string) {
-    const productIndex = products.findIndex(
-      product => product.id === productId,
-    );
+    const currentProduct = products.find(product => product.id === productId);
 
-    products[productIndex].quantity = quantity;
-    setProducts(products);
+    const updatedProducts = products.map(product => {
+      if (product.id === currentProduct?.id) {
+        return {
+          ...product,
+          quantity,
+        };
+      }
+
+      return product;
+    });
+
+    setProducts(updatedProducts);
   }
 
   return (

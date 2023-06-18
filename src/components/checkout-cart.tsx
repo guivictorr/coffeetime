@@ -52,7 +52,9 @@ export function CheckoutCart() {
                 </div>
               </div>
               <p className='grow text-end font-bold'>
-                {convertFromCentsToReal(product.priceInCents)}
+                {convertFromCentsToReal(
+                  product.priceInCents * product.quantity,
+                )}
               </p>
             </li>
 
