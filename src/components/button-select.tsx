@@ -17,7 +17,7 @@ export function ButtonSelect({
         name={name}
         {...rest}
         type='radio'
-        className='peer hidden'
+        className='peer sr-only'
       />
       <label
         className='text-sm leading-4 peer-checked:bg-purple-light peer-checked:border-purple cursor-pointer flex items-center justify-center gap-2 w-full transition bg-base-button border text-base-text hover:bg-base-hover border-base-button rounded-lg p-4'

@@ -79,7 +79,7 @@ export function CheckoutCart() {
           </div>
         </div>
 
-        <Button>CONFIRMAR PEDIDO</Button>
+        <Button type='submit'>CONFIRMAR PEDIDO</Button>
       </footer>
     </article>
   );
