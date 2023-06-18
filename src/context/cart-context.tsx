@@ -16,6 +16,7 @@ type CartContextProps = {
   products: ProductsProps[];
   addProduct: (product: ProductsProps) => void;
   removeProduct: (productId: string) => void;
+  updateProductQuantity: (quantity: number, productId: string) => void;
 };
 
 export const CartContext = createContext<CartContextProps | undefined>(
@@ -31,7 +32,7 @@ export function CartProvider({ children }: PropsWithChildren) {
     return acc;
   }, 0);
   const subtotal = products.reduce((acc, product) => {
-    acc += product.priceInCents;
+    acc += product.priceInCents * product.quantity;
     return acc;
   }, 0);
   const total = subtotal + shipFee;
@@ -57,6 +58,15 @@ export function CartProvider({ children }: PropsWithChildren) {
     setProducts(filteredProducts);
   }
 
+  function updateProductQuantity(quantity: number, productId: string) {
+    const productIndex = products.findIndex(
+      product => product.id === productId,
+    );
+
+    products[productIndex].quantity = quantity;
+    setProducts(products);
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -67,6 +77,7 @@ export function CartProvider({ children }: PropsWithChildren) {
         length,
         addProduct,
         removeProduct,
+        updateProductQuantity,
       }}
     >
       {children}

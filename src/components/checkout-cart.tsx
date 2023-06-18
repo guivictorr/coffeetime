@@ -37,7 +37,10 @@ export function CheckoutCart() {
                 <div className='flex gap-2'>
                   <Counter
                     initialValue={product.quantity}
-                    onChange={console.log}
+                    onChange={counter => {
+                      console.log(counter);
+                      cart.updateProductQuantity(counter, product.id);
+                    }}
                   />
                   <Button
                     onClick={() => cart.removeProduct(product.id)}
