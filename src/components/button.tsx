@@ -2,7 +2,7 @@ import { VariantProps, cva } from 'class-variance-authority';
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 const buttonStyles = cva(
-  'flex items-center justify-center gap-1 rounded-md transition w-full',
+  'flex items-center justify-center gap-1 rounded-md transition w-full disabled:cursor-not-allowed',
   {
     variants: {
       variant: {

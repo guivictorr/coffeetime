@@ -23,47 +23,43 @@ export function CheckoutCart() {
 
   return (
     <article className='p-4 md:p-10 bg-base-card rounded-se-3xl rounded-es-3xl rounded-ss-md rounded-ee-md'>
-      <ul>
+      <ul className='space-y-8'>
         {cart.products.map(product => (
-          <>
-            <li className='flex'>
-              <img
-                src={`src/assets/img/${product.image}`}
-                alt=''
-                className='hidden sm:block mr-5'
-              />
-              <div className=''>
-                <p className='mb-2'>{product.name}</p>
-                <div className='flex gap-2'>
-                  <Counter
-                    initialValue={product.quantity}
-                    onChange={counter => {
-                      console.log(counter);
-                      cart.updateProductQuantity(counter, product.id);
-                    }}
-                  />
-                  <Button
-                    onClick={() => cart.removeProduct(product.id)}
-                    variant='secondary'
-                  >
-                    <Trash className='text-purple' />
-                    <span>Remover</span>
-                  </Button>
-                </div>
+          <li
+            key={product.id}
+            className='flex border-b pb-8 border-base-button'
+          >
+            <img
+              src={`src/assets/img/${product.image}`}
+              alt=''
+              className='hidden sm:block mr-5'
+            />
+            <div className=''>
+              <p className='mb-2'>{product.name}</p>
+              <div className='flex gap-2'>
+                <Counter
+                  initialValue={product.quantity}
+                  onChange={counter => {
+                    cart.updateProductQuantity(counter, product.id);
+                  }}
+                />
+                <Button
+                  onClick={() => cart.removeProduct(product.id)}
+                  variant='secondary'
+                >
+                  <Trash className='text-purple' />
+                  <span>Remover</span>
+                </Button>
               </div>
-              <p className='grow text-end font-bold'>
-                {convertFromCentsToReal(
-                  product.priceInCents * product.quantity,
-                )}
-              </p>
-            </li>
-
-            <hr className='my-6 text-base-button' />
-          </>
+            </div>
+            <p className='grow text-end font-bold'>
+              {convertFromCentsToReal(product.priceInCents * product.quantity)}
+            </p>
+          </li>
         ))}
       </ul>
 
-      <footer className='flex flex-col'>
+      <footer className='flex flex-col mt-8'>
         <div className='flex justify-between mb-6'>
           <div className='flex flex-col text-start gap-3'>
             <span className='text-sm text-base-text'>Total de itens</span>
@@ -79,7 +75,9 @@ export function CheckoutCart() {
           </div>
         </div>
 
-        <Button type='submit'>CONFIRMAR PEDIDO</Button>
+        <Button disabled={cart.length === 0} type='submit'>
+          CONFIRMAR PEDIDO
+        </Button>
       </footer>
     </article>
   );

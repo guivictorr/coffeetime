@@ -13,11 +13,12 @@ import { useCart } from '../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
 
 interface FormElements extends HTMLFormControlsCollection {
-  address: string;
-  addressNumber: number;
-  state: string;
-  neighborhood: string;
-  city: string;
+  address: HTMLInputElement;
+  addressNumber: HTMLInputElement;
+  state: HTMLInputElement;
+  neighborhood: HTMLInputElement;
+  city: HTMLInputElement;
+  paymentMethod: HTMLInputElement;
 }
 interface PaymentFormElements extends HTMLFormElement {
   readonly elements: FormElements;
@@ -26,6 +27,7 @@ interface PaymentFormElements extends HTMLFormElement {
 export default function Checkout() {
   const cart = useCart();
   const navigate = useNavigate();
+
   function handleConfirmPurchase(event: FormEvent<PaymentFormElements>) {
     event.preventDefault();
 
@@ -33,18 +35,18 @@ export default function Checkout() {
       return;
     }
 
-    const { city, state, neighborhood, addressNumber, address } =
+    const { city, state, neighborhood, addressNumber, address, paymentMethod } =
       event.currentTarget.elements;
-
-    navigate(`/confirmation`, {
-      state: {
-        city,
-        state,
-        neighborhood,
-        address,
-        addressNumber,
-      },
+    const params = new URLSearchParams({
+      city: city.value,
+      state: state.value,
+      neighborhood: neighborhood.value,
+      addressNumber: addressNumber.value.toString(),
+      address: address.value,
+      paymentMethod: paymentMethod.value,
     });
+
+    navigate(`/confirmation?${params.toString()}`);
   }
 
   return (
