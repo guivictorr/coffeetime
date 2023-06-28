@@ -1,7 +1,3 @@
-import deliveryIllustration from '../assets/svg/delivery.svg';
-import locationIcon from '../assets/svg/location.svg';
-import stopWatchIcon from '../assets/svg/stopwatch.svg';
-import cashIcon from '../assets/svg/cash.svg';
 import { useSearchParams } from 'react-router-dom';
 
 enum PaymentMethods {
@@ -25,7 +21,7 @@ export default function Confirmation() {
         <div className='p-[2px] md:ax-w-[526px] bg-gradient-to-br from-yellow to-purple rounded-ss-md rounded-ee-md rounded-se-[36px] rounded-es-[36px]'>
           <ul className='space-y-8 rounded-ss-md rounded-ee-md rounded-se-[34px] rounded-es-[34px] bg-white sm:p-10'>
             <li className='flex items-center gap-3 text-base-text'>
-              <img src={locationIcon} />
+              <img src='/static/assets/svg/location.svg' />
               <div>
                 <p>
                   Entrega em{' '}
@@ -39,14 +35,14 @@ export default function Confirmation() {
               </div>
             </li>
             <li className='flex items-center gap-3 text-base-text'>
-              <img src={stopWatchIcon} />
+              <img src='/static/assets/svg/stopwatch.svg' />
               <div>
                 <p>Previsão de entrega</p>
                 <p>20 min - 30 min</p>
               </div>
             </li>
             <li className='flex items-center gap-3 text-base-text'>
-              <img src={cashIcon} />
+              <img src='/static/assets/svg/package.svg' />
               <div>
                 <p>Pagamento na entrega</p>
                 <p>
@@ -64,7 +60,11 @@ export default function Confirmation() {
         </div>
       </section>
       <section className='grid place-items-end'>
-        <img className='hidden md:block' src={deliveryIllustration} alt='' />
+        <img
+          className='hidden md:block'
+          src='/static/assets/svg/delivery.svg'
+          alt=''
+        />
       </section>
     </main>
   );

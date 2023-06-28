@@ -1,9 +1,9 @@
 import coffeeData from '../data/coffees.json';
-import heroImage from '../assets/img/hero.png';
-import coffeeIcon from '../assets/svg/coffee.svg';
-import shoppingIcon from '../assets/svg/shopping.svg';
-import packageIcon from '../assets/svg/package.svg';
-import stopwatchIcon from '../assets/svg/stopwatch.svg';
+import heroImage from '/static/assets/img/hero.png';
+import coffeeIcon from '/static/assets/svg/coffee.svg';
+import shoppingIcon from '/static/assets/svg/shopping.svg';
+import packageIcon from '/static/assets/svg/package.svg';
+import stopwatchIcon from '/static/assets/svg/stopwatch.svg';
 import { CoffeeCard } from '../components/coffee-card';
 
 const heroList = [

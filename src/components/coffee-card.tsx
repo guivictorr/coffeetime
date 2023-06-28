@@ -24,7 +24,7 @@ export function CoffeeCard({
 
   return (
     <div className='pb-5 px-6 text-base-text max-w-[256px] w-full bg-base-card flex flex-col items-center text-center rounded-se-3xl rounded-es-3xl rounded-ss-md rounded-ee-md'>
-      <img src={`src/assets/img/${image}`} className='w-28 h-28 -mt-6' />
+      <img src={`/static/assets/img/${image}`} className='w-28 h-28 -mt-6' />
 
       <ul className='flex flex-col sm:flex-row items-center gap-x-2'>
         {categories.map(category => (

@@ -30,7 +30,7 @@ export function CheckoutCart() {
             className='flex border-b pb-8 border-base-button'
           >
             <img
-              src={`src/assets/img/${product.image}`}
+              src={`/static/assets/img/${product.image}`}
               alt=''
               className='hidden sm:block mr-5'
             />
